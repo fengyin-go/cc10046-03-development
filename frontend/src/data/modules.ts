@@ -200,6 +200,17 @@ export const MODULES: ModuleMeta[] = [
     actionTargets: {"触发同步": "待启动", "重置水位": "同步中断"},
     metrics: ["水位总数", "已同步水位", "待启动水位"],
   },
+  {
+    key: "resume_plan",
+    name: "续采计划",
+    entity: "续采计划",
+    desc: "记录增量同步各时段分片的状态与流转，让调度从已落库批次恢复后续采集",
+    fields: ["计划标识", "来源配置", "区间起点", "区间终点", "分片粒度", "计划状态", "待补段数", "结果批次"],
+    statuses: ["待采", "采集中", "待补采", "已完成"],
+    actions: ["触发同步", "切换待采", "核对缺口"],
+    actionTargets: {"触发同步": "采集中", "切换待采": "待采", "核对缺口": "待补采"},
+    metrics: ["计划总数", "采集中计划", "已完成计划"],
+  },
 ]
 
 export const MODULE_BY_KEY: Map<string, ModuleMeta> = new Map(

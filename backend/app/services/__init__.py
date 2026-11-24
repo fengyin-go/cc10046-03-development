@@ -20,6 +20,7 @@ from app.services.crawl_audit import CrawlAuditService
 from app.services.source_auth import SourceAuthService
 from app.services.html_cleaner import HtmlCleanerService
 from app.services.incremental_sync import IncrementalSyncService
+from app.services.resume_plan import ResumePlanService
 from app.services.error_logger import ErrorLoggerService
 from app.services.session_manager import SessionManagerService
 from app.services.data_cleanup import DataCleanupService
@@ -43,6 +44,7 @@ SERVICES: dict[str, BaseModuleService] = {
     "source_auth": SourceAuthService(),
     "html_cleaner": HtmlCleanerService(),
     "incremental_sync": IncrementalSyncService(),
+    "resume_plan": ResumePlanService(),
     "error_logger": ErrorLoggerService(),
     "session_manager": SessionManagerService(),
     "data_cleanup": DataCleanupService(),
